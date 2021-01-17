@@ -18,10 +18,14 @@ body {
     background-image: url('../images/bg-pattern-top-mobile.svg'), url('../images/bg-pattern-bottom-mobile.svg');
     background-position: left top, right bottom;
     background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .container {
-    margin: auto;
     width: 90%;
 }
 
@@ -56,7 +60,7 @@ body {
     width: 100%;
     text-align: center;
     margin: 1rem auto;
-    padding: 0.5rem 0;
+    padding: 1rem 0;
 }
 
 .list__stars {
@@ -85,44 +89,47 @@ body {
 .reviews {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 4em;
+    margin-top: 2rem;
 }
 
 .card {
-    margin-top: 2rem;
+    height: 200px;
     background-color: var(--clr-magenta);
     border: transparent;
     border-radius: 8px;
-    padding: 2.5em;
+    padding: 2em;
     color: white;
     display: grid;
     font-size: 15px;
-    grid-template-areas: "img name name name"
-                         "img graduate graduate graduate"
-                         "comment comment comment comment";
+    grid-template-areas: "img name"
+                         "img graduate"
+                         "comment comment";
+    grid-template-columns: minmax(20px, 60px) auto;
+    gap: 0.5rem 0.8rem;
 }
 
 .profile-img {
     border: transparent;
     border-radius: 50%;
     grid-area: img;
+    width: 100%;
 }
 
 .name {
     grid-area: name;
     font-weight: var(--fw-semi-bold);
+    margin: auto 0 0;
 }
 
 .graduate {
     grid-area: graduate;
     color: var(--clr-pink);
+    margin: 0 0 auto;
 }
 
 .comment {
     grid-area: comment;
-    line-height: 1.5rem;
+    line-height: 2;
 }
 
 @media screen and (min-width: 720px){
@@ -136,12 +143,12 @@ body {
     }
 
     .header > div:first-child {
-        padding: 0 3rem;
+        padding: 0 3rem 0 0;
     }
 
     .title {
         text-align: left;
-        font-size: 36px;
+        font-size: 3rem;
     }
 
     .subtitle {
@@ -168,30 +175,39 @@ body {
 
     .reviews {
         flex-direction: row;
-        flex-wrap: wrap;
-        
+        gap: 2rem;
     }
 
     .card {
-        width: 330px;
         font-size: 12px;
-        margin: 2rem auto;
+    }
+    
+    .reviews > .card:nth-of-type(1) {
+        margin-top: 1rem;
     }
 
-    .card-2 {
-        margin-top: 4rem;
+    .reviews > .card:nth-of-type(2) {
+        margin-top: 2rem;
     }
 
-    .card-3 {
-        margin-top: 6rem;
+    .reviews > .card:nth-of-type(3) {
+        margin-top: 3rem;
     }
-
 }
 
 @media screen and (min-width: 1000px) {
+    .container {
+        margin: 1rem;
+        max-width: 1200px;
+    }
+
+    .header {
+        margin: 0 auto 5%;
+        justify-content: space-between;
+    }
+
     .header > div:last-child {
         margin-left: 4rem;
-        padding: 2rem;
     }
 
     .title {
