@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
+
+:root {
+    --clr-magenta: hsl(300, 43%, 22%);
+    --clr-pink: hsl(333, 80%, 67%);
+
+    --clr-dark: hsl(303, 10%, 53%);
+    --clr-light: hsl(300, 24%, 96%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    --fw-regular: 400;
+    --fw-semi-bold: 500;
+    --fw-bold: 700;
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    background-image: url('../images/bg-pattern-top-mobile.svg'), url('../images/bg-pattern-bottom-mobile.svg');
+    background-position: left top, right bottom;
+    background-repeat: no-repeat;
+}
+
+.container {
+    margin: auto;
+    width: 90%;
+}
+
+.header {
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5%;
+}
+
+.header > div {
+    width: 100%;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1em;
+    color : var(--clr-magenta);
+    text-align: center;
+}
+
+.subtitle {
+    color: var(--clr-dark);
+    text-align: center;
+}
+
+.achievements {
+    background-color:  hsl(300, 24%, 96%);
+    border: transparent;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    margin: 1rem auto;
+    padding: 0.5rem 0;
+}
+
+.list__stars {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.star {
+    list-style: none;
+    height: 25px;
+    width: 25px;
+    background: url('../images/icon-star.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.title-star {
+    font-weight: var(--fw-bold);
+    color: var(--clr-magenta);
+    margin: 0.5rem 0;
+    font-size: 12px;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4em;
+}
+
+.card {
+    margin-top: 2rem;
+    background-color: var(--clr-magenta);
+    border: transparent;
+    border-radius: 8px;
+    padding: 2.5em;
+    color: white;
+    display: grid;
+    font-size: 15px;
+    grid-template-areas: "img name name name"
+                         "img graduate graduate graduate"
+                         "comment comment comment comment";
+}
+
+.profile-img {
+    border: transparent;
+    border-radius: 50%;
+    grid-area: img;
+}
+
+.name {
+    grid-area: name;
+    font-weight: var(--fw-semi-bold);
+}
+
+.graduate {
+    grid-area: graduate;
+    color: var(--clr-pink);
+}
+
+.comment {
+    grid-area: comment;
+    line-height: 1.5rem;
+}
+
+@media screen and (min-width: 720px){
+    body {
+        font-family: 'Spartan', sans-serif;
+        background-image: url('../images/bg-pattern-top-desktop.svg'), url('../images/bg-pattern-bottom-desktop.svg');
+    }
+
+    .header {
+        flex-direction: row;
+    }
+
+    .header > div:first-child {
+        padding: 0 3rem;
+    }
+
+    .title {
+        text-align: left;
+        font-size: 36px;
+    }
+
+    .subtitle {
+        text-align: left;
+    }
+
+    .header > div:last-child {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .achievement-2 {
+        align-self: center;
+    }
+
+    .achievement-3 {
+        align-self: flex-end;
+    }
+
+    .achievements {
+        width: 80%;
+        margin: 0.3rem 0;
+    }
+
+    .reviews {
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+    }
+
+    .card {
+        width: 330px;
+        font-size: 12px;
+        margin: 2rem auto;
+    }
+
+    .card-2 {
+        margin-top: 4rem;
+    }
+
+    .card-3 {
+        margin-top: 6rem;
+    }
+
+}
+
+@media screen and (min-width: 1000px) {
+    .header > div:last-child {
+        margin-left: 4rem;
+        padding: 2rem;
+    }
+
+    .title {
+        font-size: 52px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .achievements {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .reviews {
+        margin: 0;
+    }
+}
