@@ -93,6 +93,7 @@ body {
 }
 
 .card {
+    margin-top: 1rem;
     height: 200px;
     background-color: var(--clr-magenta);
     border: transparent;
@@ -100,7 +101,7 @@ body {
     padding: 2em;
     color: white;
     display: grid;
-    font-size: 15px;
+    font-size: 12px;
     grid-template-areas: "img name"
                          "img graduate"
                          "comment comment";
@@ -176,10 +177,6 @@ body {
     .reviews {
         flex-direction: row;
         gap: 2rem;
-    }
-
-    .card {
-        font-size: 12px;
     }
     
     .reviews > .card:nth-of-type(1) {
